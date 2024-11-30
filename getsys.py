@@ -11,8 +11,6 @@ import re
 from print_dict import * # import all from print_dict.py
 
 
-
-
 # function for getting bytes in their proper formats
 def get_size(bytes, suffix="b"):
     """
@@ -69,22 +67,31 @@ def get_system_info():
     
     # network information
     network_info = []
+
     if_addrs = psutil.net_if_addrs()
+
     for interface_name, interface_addresses in if_addrs.items():
+
         for address in interface_addresses:
+
             info = {"interface": interface_name}
+
             if str(address.family) == 'AddressFamily.AF_INET':
+
                 info.update({
                     "ip_address": address.address,
                     "netmask": address.netmask,
                     "broadcast_ip": address.broadcast,
                 })
+
             elif str(address.family) == 'AddressFamily.AF_PACKET':
+
                 info.update({
                     "mac_address": address.address,
                     "netmask": address.netmask,
                     "broadcast_mac": address.broadcast,
                 })
+
             network_info.append(info)
     
     net_io = psutil.net_io_counters()
@@ -147,9 +154,6 @@ def get_system_info():
         },
 
     }
-
-
-
 
 
 # the real work starts here
