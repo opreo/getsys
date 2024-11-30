@@ -1,4 +1,6 @@
-import psutil
+# getsys.py
+
+# import psutil
 import platform
 from datetime import datetime
 import cpuinfo
