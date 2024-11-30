@@ -1,12 +1,16 @@
 # getsys.py
 
-# import psutil
+import psutil
 import platform
 from datetime import datetime
 import cpuinfo
 import socket
 import uuid
 import re
+
+from print_dict import * # import all from print_dict.py
+
+
 
 
 # function for getting bytes in their proper formats
