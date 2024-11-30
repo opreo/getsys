@@ -161,6 +161,6 @@ if __name__ == "__main__":
 
     system_info = get_system_info()
 
-    print("\n" + "system_info:" + "\n" "=" * 20 + "\n")
+    print("\n" + "system_info:" + "\n" + "=" * 20 + "\n")
     print_dict(system_info)
     print("\n")
